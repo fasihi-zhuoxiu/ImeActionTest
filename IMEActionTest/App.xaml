@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IMEActionTest.App">
+<Application
+    x:Class="IMEActionTest.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

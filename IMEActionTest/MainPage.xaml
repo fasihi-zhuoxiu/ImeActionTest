@@ -5,70 +5,64 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     xmlns:specific="clr-namespace:IMEActionTest.Specific">
-
-    <ContentPage Title="Entry Simple">
-        <StackLayout>
-            <Entry Placeholder="Entry1" />
-            <Entry Placeholder="Entry2" />
-            <Entry Placeholder="Entry3" />
-            <Entry Placeholder="Entry4" />
-            <Label
-                Margin="5"
-                Text="All ImeAction works as &quot;Done&quot;" />
-        </StackLayout>
-    </ContentPage>
-
-
     <ContentPage Title="Entry With ImeOptions">
-        <StackLayout>
-            <Entry
-                android:Entry.ImeOptions="Next"
-                Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Next&quot; /&gt;" />
-            <Entry
-                android:Entry.ImeOptions="Search"
-                Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Search&quot; /&gt;" />
-            <Entry
-                android:Entry.ImeOptions="Send"
-                Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Send&quot; /&gt;" />
-            <Entry
-                android:Entry.ImeOptions="Done"
-                Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Done&quot; /&gt;" />
-            <Label
-                Margin="5"
-                Text="Only &quot;Done&quot; action works, &quot;Next&quot;, &quot;Search&quot;, &quot;Send&quot; doesn't. The keyboard under mobile phone in landscape orientation shows only &quot;Done&quot;" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+
+                <Entry
+                    android:Entry.ImeOptions="Next"
+                    Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Next&quot; /&gt;" />
+
+                <Entry
+                    android:Entry.ImeOptions="Search"
+                    Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Search&quot; /&gt;" />
+
+                <Entry
+                    android:Entry.ImeOptions="Send"
+                    Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Send&quot; /&gt;" />
+
+                <Entry
+                    android:Entry.ImeOptions="Done"
+                    Placeholder="&lt;Entry android:Entry.ImeOptions=&quot;Done&quot; /&gt;" />
+
+                <Label
+                    Margin="5"
+                    Text="If no ImeOptions was set, the entry works as &quot;Done&quot; " />
+
+                <Label
+                    Margin="5"
+                    Text="No matter with or without ImeOptions, the entry works as &quot;Done&quot;." />
+
+                <Label
+                    Margin="5"
+                    Text="&quot;Next&quot;, &quot;Search&quot;, &quot;Send&quot; doesn't. The keyboard under mobile phone in landscape orientation shows only &quot;Done&quot;" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage>
-    <ContentPage Title="Editor Simple">
-        <StackLayout>
-            <Editor Placeholder="Editor1" />
-            <Editor Placeholder="Editor2" />
-            <Editor Placeholder="Editor3" />
-            <Editor Placeholder="Editor4" />
-            <Label
-                Margin="5"
-                Text="All ImeAction works as &quot;Next&quot; and jump into next in a loop" />
-        </StackLayout>
-    </ContentPage>
+
     <ContentPage Title="Editor With ImeOptions(Custom)">
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
 
-            <specific:SpecificEditor
-                x:Name="Editor1"
-                specific:SpecificEditor.ImeOptions="Next"
-                Placeholder="SpecificEditor1" />
-            <specific:SpecificEditor
-                specific:SpecificEditor.ImeOptions="Search"
-                Placeholder="SpecificEditor2" />
-            <specific:SpecificEditor
-                specific:SpecificEditor.ImeOptions="Send"
-                Placeholder="SpecificEditor3" />
-            <specific:SpecificEditor
-                specific:SpecificEditor.ImeOptions="Done"
-                Placeholder="SpecificEditor4" />
-
-            <Label
-                Margin="5"
-                Text="With specific Editor and belonging renderer, the editor could show different ImeAction on a mobile phone with landscape orientation " />
-        </StackLayout>
+                <specific:SpecificEditor
+                    specific:SpecificEditor.ImeOptions="Next"
+                    Placeholder="&lt;specific:SpecificEditor specific:SpecificEditor.ImeOptions=&quot;Next&quot;/&gt;" />
+                <specific:SpecificEditor
+                    specific:SpecificEditor.ImeOptions="Search"
+                    Placeholder="&lt;specific:SpecificEditor specific:SpecificEditor.ImeOptions=&quot;Search&quot;/&gt;" />
+                <specific:SpecificEditor
+                    specific:SpecificEditor.ImeOptions="Send"
+                    Placeholder="&lt;specific:SpecificEditor specific:SpecificEditor.ImeOptions=&quot;Send&quot;/&gt;" />
+                <specific:SpecificEditor
+                    specific:SpecificEditor.ImeOptions="Done"
+                    Placeholder="&lt;specific:SpecificEditor specific:SpecificEditor.ImeOptions=&quot;Done&quot;/&gt;" />
+                <Label
+                    Margin="5"
+                    Text="If no ImeAction was set, Editor works as &quot;Next&quot; and jump into next Editor in a loop" />
+                <Label
+                    Margin="5"
+                    Text="With specific Editor and belonging renderer, the editor could show different ImeAction on a mobile phone with landscape orientation " />
+            </StackLayout>
+        </ScrollView>
     </ContentPage>
 </TabbedPage>
